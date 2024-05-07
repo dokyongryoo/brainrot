@@ -38,7 +38,7 @@
         clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
         transform: scale(1) translate(0px, 100px);
         top: 280px;
-        z-index: 1;
+        z-index: 2;
       }
 
       .eyeL {
@@ -75,14 +75,36 @@
         transform: translateX(-50%);
         z-index: 3;
       }
+
+      .legL {
+        position: absolute;
+        border-left: 10px solid white;
+        height: 100px;
+        left: 371px;
+        top: 530px;
+        z-index: 1;
+      }
+
+      .legR {
+        position: absolute;
+        border-left: 10px solid white;
+        height: 100px;
+        left: 425px;
+        top: 530px;
+        z-index: 1;
+      }
     </style>
   </head>
   <body>
-    <div class="womanbottom"> </div>
+    <div class="womanbottom"></div>
     <div class="face">
-      <div class="eyeL"> </div>
-      <div class="eyeR"> </div>
+      <div class="eyeL"></div>
+      <div class="eyeR"></div>
       <div class="mouth"></div>
+    </div>
+    <div class="legL"></div>
+    <div class="legR">
+
     </div>
   </body>
 </html>
