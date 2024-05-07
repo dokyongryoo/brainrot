@@ -38,7 +38,6 @@
         clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
         transform: scale(1) translate(0px, 100px);
         top: 280px;
-
         z-index: 1;
       }
 
@@ -63,6 +62,19 @@
         left: 70%;
         transform: translateX(-50%);
       }
+
+      .mouth {
+        position: absolute;
+        width: 40px;
+        height: 10px;
+        background-color: transparent;
+        border: 2px solid black;
+        border-radius: 50%;
+        top: 90px;
+        left: 55%;
+        transform: translateX(-50%);
+        z-index: 3;
+      }
     </style>
   </head>
   <body>
@@ -70,6 +82,7 @@
     <div class="face">
       <div class="eyeL"> </div>
       <div class="eyeR"> </div>
+      <div class="mouth"></div>
     </div>
   </body>
 </html>
