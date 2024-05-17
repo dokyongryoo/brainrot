@@ -100,10 +100,73 @@
         left: 25px;
         z-index: -4;
       }
+
+      .speech-bubble {
+        position: absolute;
+        background-color: white;
+        border: 2px solid black;
+        border-radius: 10px;
+        padding: 10px;
+        max-width: 200px;
+        text-align: center;
+      }
+
+      .speech-bubble::after {
+        content: '';
+        position: absolute;
+        border-width: 10px;
+        border-style: solid;
+      }
+
+      .speech-bubble.character1 {
+        top: -80px;
+        width: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .speech-bubble.character1::after {
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-color: white transparent transparent transparent;
+      }
+
+      .speech-bubble.character2 {
+        top: -140px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .speech-bubble.character2::after {
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-color: white transparent transparent transparent;
+      }
+
+      .options {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+      }
+
+      .option {
+        cursor: pointer;
+        padding: 5px 10px;
+        background-color: lightgray;
+        border: 1px solid black;
+        border-radius: 5px;
+      }
+
+      .option:hover {
+        background-color: gray;
+        color: white;
+      }
     </style>
   </head>
   <body>
-    <div class="container">
+    <div class="container character1">
       <div class="face">
         <div class="eyeL"></div>
         <div class="eyeR"></div>
@@ -112,8 +175,9 @@
       <div class="womanbottom"></div>
       <div class="legL"></div>
       <div class="legR"></div>
+      <div class="speech-bubble character1" id="speech1"></div>
     </div>
-    <div class="container">
+    <div class="container character2">
       <div class="face2">
         <div class="eyeL"></div>
         <div class="eyeR"></div>
@@ -122,6 +186,38 @@
       <div class="womanbottom2"></div>
       <div class="legL2"></div>
       <div class="legR2"></div>
+      <div class="speech-bubble character2" id="speech2"></div>
     </div>
+
+    <script>
+      const speech1 = document.getElementById('speech1');
+      const speech2 = document.getElementById('speech2');
+
+      function showOptions() {
+        speech2.innerHTML = `
+          <div>Choose a response:</div>
+          <div class="options">
+            <div class="option" onclick="respond('brainrot')">Brainrot</div>
+            <div class="option" onclick="respond('not brainrot')">Not Brainrot</div>
+          </div>
+        `;
+      }
+
+      function respond(choice) {
+        if (choice === 'brainrot') {
+          speech2.innerHTML = 'You chose Brainrot!';
+        } else {
+          speech2.innerHTML = 'You chose Not Brainrot!';
+        }
+        setTimeout(() => {
+          speech1.innerHTML = 'Now it\'s my turn!';
+          showOptions();
+        }, 2000);
+      }
+
+      // Start the conversation
+      speech1.innerHTML = 'Hello! How are you?';
+      setTimeout(showOptions, 2000);
+    </script>
   </body>
 </html>
