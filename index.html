@@ -22,7 +22,8 @@
         position: relative;
       }
 
-      .face, .face2 {
+      .face,
+      .face2 {
         width: 150px;
         height: 150px;
         background-color: white;
@@ -34,7 +35,8 @@
         z-index: 2;
       }
 
-      .womanbottom, .womanbottom2 {
+      .womanbottom,
+      .womanbottom2 {
         width: 200px;
         height: 200px;
         background-color: white;
@@ -46,7 +48,8 @@
         z-index: -2;
       }
 
-      .eyeL, .eyeR {
+      .eyeL,
+      .eyeR {
         position: absolute;
         width: 10px;
         height: 10px;
@@ -78,30 +81,14 @@
         z-index: 3;
       }
 
-      .legL, .legR, .legL2, .legR2 {
-        position: absolute;
-        border-left: 10px solid white;
-        height: 100px;
-        top: 68%;
-        z-index: 1;
-      }
-
-      .legL {
-        left: 47%;
-      }
-
-      .legR {
-        left: 52%;
-      }
-
+      .legL,
       .legL2 {
-        left: 47%;
+        position: absolute;
+        border: 5px solid white;
+        height: 70px;
+        top: calc(150px + 100px);
+        z-index: -3;
       }
-
-      .legR2 {
-        left: 52%;
-      }
-      
     </style>
   </head>
   <body>
