@@ -14,51 +14,53 @@
         background-size: cover;
         background-position: center;
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
       }
 
-      .face {
-        position: absolute;
+      .container {
+        position: relative;
+      }
+
+      .face, .face2 {
         width: 150px;
         height: 150px;
         background-color: white;
         border-radius: 50%;
-        top: 300px;
+        position: absolute;
+        top: 0;
         left: 50%;
         transform: translateX(-50%);
         z-index: 2;
       }
 
-      .womanbottom {
-        position: absolute;
+      .womanbottom, .womanbottom2 {
         width: 200px;
         height: 200px;
         background-color: white;
         clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-        transform: scale(1) translate(0px, 100px);
-        top: 280px;
-        z-index: 2;
+        position: absolute;
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -2;
       }
 
-      .eyeL {
+      .eyeL, .eyeR {
         position: absolute;
         width: 10px;
         height: 10px;
         background-color: black;
         border-radius: 50%;
         top: 50px;
+      }
+
+      .eyeL {
         left: 35%;
         transform: translateX(-50%);
       }
 
       .eyeR {
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        background-color: black;
-        border-radius: 50%;
-        top: 50px;
         left: 70%;
         transform: translateX(-50%);
       }
@@ -71,40 +73,57 @@
         border: 2px solid black;
         border-radius: 50%;
         top: 90px;
-        left: 55%;
+        left: 50%;
         transform: translateX(-50%);
         z-index: 3;
       }
 
-      .legL {
+      .legL, .legR, .legL2, .legR2 {
         position: absolute;
         border-left: 10px solid white;
         height: 100px;
-        left: 47%;
         top: 68%;
         z-index: 1;
+      }
+
+      .legL {
+        left: 47%;
       }
 
       .legR {
-        position: absolute;
-        border-left: 10px solid white;
-        height: 100px;
         left: 52%;
-        top: 68%;
-        z-index: 1;
       }
+
+      .legL2 {
+        left: 47%;
+      }
+
+      .legR2 {
+        left: 52%;
+      }
+      
     </style>
   </head>
   <body>
-    <div class="womanbottom"></div>
-    <div class="face">
-      <div class="eyeL"></div>
-      <div class="eyeR"></div>
-      <div class="mouth"></div>
+    <div class="container">
+      <div class="face">
+        <div class="eyeL"></div>
+        <div class="eyeR"></div>
+        <div class="mouth"></div>
+      </div>
+      <div class="womanbottom"></div>
+      <div class="legL"></div>
+      <div class="legR"></div>
     </div>
-    <div class="legL"></div>
-    <div class="legR">
-
+    <div class="container">
+      <div class="face2">
+        <div class="eyeL"></div>
+        <div class="eyeR"></div>
+        <div class="mouth"></div>
+      </div>
+      <div class="womanbottom2"></div>
+      <div class="legL2"></div>
+      <div class="legR2"></div>
     </div>
   </body>
 </html>
