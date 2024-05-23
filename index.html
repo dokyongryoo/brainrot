@@ -16,6 +16,7 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
+        font-family: 'Comic Sans MS', 'Comic Sans', cursive;
       }
 
       .container {
@@ -119,7 +120,7 @@
       }
 
       .speech-bubble.character1 {
-        top: -80px;
+        top: -130px;
         width: 200px;
         left: 50%;
         transform: translateX(-50%);
@@ -133,7 +134,7 @@
       }
 
       .speech-bubble.character2 {
-        top: -140px;
+        top: -150px;
         left: 50%;
         transform: translateX(-50%);
       }
@@ -162,6 +163,11 @@
       .option:hover {
         background-color: gray;
         color: white;
+      }
+
+      .adjusted-size {
+        width: 300px;
+        padding: 20px;
       }
     </style>
   </head>
@@ -195,28 +201,29 @@
 
       function showOptions() {
         speech2.innerHTML = `
-          <div>Choose a response:</div>
+          <div>how will u respond?</div>
           <div class="options">
-            <div class="option" onclick="respond('brainrot')">Brainrot</div>
-            <div class="option" onclick="respond('not brainrot')">Not Brainrot</div>
+            <div class="option" onclick="respond('brainrot')">brainrot👻</div>
+            <div class="option" onclick="respond('not brainrot')">not brainrot</div>
           </div>
         `;
       }
 
       function respond(choice) {
         if (choice === 'brainrot') {
-          speech2.innerHTML = 'You chose Brainrot!';
+          speech2.innerHTML = 'walking in 2024 is crazy';
         } else {
-          speech2.innerHTML = 'You chose Not Brainrot!';
+          speech2.innerHTML = 'ah nice i am okay just have lots to do, how about u';
         }
+        speech2.classList.add('adjusted-size');
         setTimeout(() => {
-          speech1.innerHTML = 'Now it\'s my turn!';
+          speech1.innerHTML = 'bruh';
+          speech2.classList.remove('adjusted-size');
           showOptions();
         }, 2000);
       }
 
-      // Start the conversation
-      speech1.innerHTML = 'Hello! How are you?';
+      speech1.innerHTML = 'heyyy how are u? i was gonna go on a walk if u wanna join';
       setTimeout(showOptions, 2000);
     </script>
   </body>
