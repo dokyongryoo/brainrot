@@ -170,9 +170,22 @@
         width: 390px;
         padding: 20px;
       }
+
+      #glitchOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('glitch-overlay.gif');
+        background-size: cover;
+        display: none;
+        opacity: 0.5;
+      }
     </style>
   </head>
   <body>
+    <div id="glitchOverlay"></div>
     <div class="container character1">
       <div class="face">
         <div class="eyeL"></div>
@@ -232,10 +245,12 @@
       }
 
       function respond(choice) {
+        const glitchOverlay = document.getElementById('glitchOverlay');
         if (choice === 'brainrot') {
           const randomIndex = Math.floor(Math.random() * brainrotResponses.length);
           speech2.innerHTML = brainrotResponses[randomIndex];
           speech2.classList.add('adjusted-size');
+          glitchOverlay.style.display = 'block'; // Show glitch overlay
           setTimeout(() => {
             speech1.innerHTML = 'bruh bye';
             speech2.classList.remove('adjusted-size');
@@ -245,6 +260,7 @@
           const randomIndex = Math.floor(Math.random() * notBrainrotResponses.length);
           speech2.innerHTML = notBrainrotResponses[randomIndex];
           speech2.classList.add('adjusted-size');
+          glitchOverlay.style.display = 'none'; // Hide glitch overlay
           setTimeout(() => {
             speech1.innerHTML = "haha yeah i'm good, let's hang out soon! think i'm gonna head over to the walking trail now";
             speech2.classList.remove('adjusted-size');
