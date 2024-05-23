@@ -199,19 +199,35 @@
       const speech1 = document.getElementById('speech1');
       const speech2 = document.getElementById('speech2');
 
+      // Define an array of "brainrot" responses
+      const brainrotResponses = [
+        'walking in 2024 is crazy',
+        'WALKING MENTIONED 🗣️👏',
+        'me when I walk 😹',
+        'bro went for a walk 💀',
+        "bro's walkmaxxing",
+        'went to walking city and everyone there knew you',
+        'walking moment 🚶🏻‍♀️',
+        'this is so walkingcore!!!',
+        'we got bro walking before gta 6',
+        "it's giving going for a walk",
+      ];
+
       function showOptions() {
         speech2.innerHTML = `
-          <div>how will u respond?</div>
-          <div class="options">
-            <div class="option" onclick="respond('brainrot')">brainrot👻</div>
-            <div class="option" onclick="respond('not brainrot')">not brainrot</div>
-          </div>
-        `;
+    <div>how will u respond?</div>
+    <div class="options">
+      <div class="option" onclick="respond('brainrot')">brainrot👻</div>
+      <div class="option" onclick="respond('not brainrot')">not brainrot</div>
+    </div>
+  `;
       }
 
       function respond(choice) {
         if (choice === 'brainrot') {
-          speech2.innerHTML = 'walking in 2024 is crazy';
+          // Randomly select a response from the brainrotResponses array
+          const randomIndex = Math.floor(Math.random() * brainrotResponses.length);
+          speech2.innerHTML = brainrotResponses[randomIndex];
         } else {
           speech2.innerHTML = 'ah nice i am okay just have lots to do, how about u';
         }
