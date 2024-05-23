@@ -205,9 +205,34 @@
         background-image: url('glitch-overlay3.gif');
         opacity: 0.2;
       }
+
+      .audio-container {
+        position: fixed;
+        top: 90;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .music-credit {
+        position: absolute;
+        top: -30px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 12px;
+        color: black;
+      }
     </style>
   </head>
   <body>
+    <div class="audio-container">
+      <audio controls autoplay loop>
+        <source src="DTM Rally House.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="music-credit">Rally House prod. DTM 🎶</div>
+    </div>
+
     <div id="glitchOverlay">
       <div class="glitch1"></div>
       <div class="glitch2"></div>
@@ -277,7 +302,7 @@
           const randomIndex = Math.floor(Math.random() * brainrotResponses.length);
           speech2.innerHTML = brainrotResponses[randomIndex];
           speech2.classList.add('adjusted-size');
-          glitchOverlay.style.display = 'block'; // Show glitch overlay
+          glitchOverlay.style.display = 'block';
           setTimeout(() => {
             speech1.innerHTML = 'bruh bye';
             speech2.classList.remove('adjusted-size');
@@ -287,7 +312,7 @@
           const randomIndex = Math.floor(Math.random() * notBrainrotResponses.length);
           speech2.innerHTML = notBrainrotResponses[randomIndex];
           speech2.classList.add('adjusted-size');
-          glitchOverlay.style.display = 'none'; // Hide glitch overlay
+          glitchOverlay.style.display = 'none';
           setTimeout(() => {
             speech1.innerHTML = "haha yeah i'm good, let's hang out soon! think i'm gonna head over to the walking trail now";
             speech2.classList.remove('adjusted-size');
