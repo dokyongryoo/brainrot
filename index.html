@@ -206,11 +206,38 @@
         opacity: 0.2;
       }
 
-      .audio-container {
-        position: fixed;
-        top: 90;
-        left: 50%;
-        transform: translateX(-50%);
+      .cloud {
+        position: absolute;
+        top: 45px;
+        left: 35%;
+        width: 400px;
+        height: 20%;
+        background: white;
+        border-radius: 50%;
+        z-index: -1;
+      }
+
+      .cloud::before,
+      .cloud::after {
+        content: '';
+        position: absolute;
+        background: white;
+        border-radius: 50%;
+        z-index: -5;
+      }
+
+      .cloud::before {
+        width: 70%;
+        height: 70%;
+        top: -20%;
+        left: 10%;
+      }
+
+      .cloud::after {
+        width: 60%;
+        height: 60%;
+        top: -10%;
+        right: 10%;
       }
 
       .music-credit {
@@ -222,9 +249,18 @@
         font-size: 12px;
         color: black;
       }
+
+      .audio-container {
+        position: fixed;
+        top: 90px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     </style>
   </head>
   <body>
+    <div class="cloud"></div>
+
     <div class="audio-container">
       <audio controls autoplay loop>
         <source src="DTM Rally House.mp3" type="audio/mpeg">
